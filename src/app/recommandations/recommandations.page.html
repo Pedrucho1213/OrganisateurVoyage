@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sites culturels</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let site of sites.records" (click)="openModal(site.recordid)" >
+    <ion-card-header>
+      <ion-card-title> {{site.fields.site}}</ion-card-title>
+    </ion-card-header>
+     
+    <ion-card-content>
+      <img src=""/><br>
+      {{site.fields.states}}
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

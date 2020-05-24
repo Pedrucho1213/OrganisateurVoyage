@@ -15,8 +15,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { HttpClientModule } from '@angular/common/http';
 
 import { Facebook } from '@ionic-native/facebook/ngx';
+
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDzNuudva_55feGS_s1MsBFP3wgtSQI2gY',
@@ -37,7 +39,9 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    HttpClientModule,
+
   ],
   providers: [
     Facebook,

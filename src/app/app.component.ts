@@ -29,6 +29,11 @@ export class AppComponent implements OnInit {
       title: 'Paramètres',
       url: '/profile',
       icon: 'cog'
+    },
+     {
+      title: 'Recommandations',
+      url: '/recommandations',
+      icon: 'compass'
     }
   ];
 
