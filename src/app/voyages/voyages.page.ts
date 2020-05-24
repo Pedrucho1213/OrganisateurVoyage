@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import NewTravel from '../models/new-travel';
+import {NewTravel} from '../models/new-travel';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';

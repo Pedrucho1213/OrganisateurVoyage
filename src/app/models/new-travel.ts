@@ -5,4 +5,5 @@ export  interface  NewTravel {
     endTravel: string;
     userId: string;
     photoUrl: string;
+    timeOrigin: string;
 }

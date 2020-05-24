@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollectionGroup} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
-import NewTravel from '../models/new-travel';
+import {NewTravel} from '../models/new-travel';
 import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
@@ -16,6 +16,7 @@ export class CreateVoyagePage implements OnInit {
     budget: any;
     debut: any;
     fin: any;
+    newtravel: NewTravel;
 
     constructor(
         public afDB: AngularFireDatabase,
@@ -27,14 +28,14 @@ export class CreateVoyagePage implements OnInit {
 
     saveTravel() {
         this.afAuth.authState.subscribe(auth => {
-            NewTravel.nameTravel = this.nom;
-            NewTravel.budgetTravel = this.budget;
-            NewTravel.startTravel = this.debut;
-            NewTravel.endTravel = this.fin;
-            NewTravel.userId = auth.uid;
-            NewTravel.timeOrigin = new Date();
-            NewTravel.photoUrl = auth.photoURL;
-            this.firestore.collection('travels').add(NewTravel).then(() => {
+            this.newtravel.nameTravel = this.nom;
+            this.newtravel.budgetTravel = this.budget;
+            this.newtravel.startTravel = this.debut;
+            this.newtravel.endTravel = this.fin;
+            this.newtravel.userId = auth.uid;
+            this.newtravel.timeOrigin = new Date().toISOString();
+            this.newtravel.photoUrl = auth.photoURL;
+            this.firestore.collection('travels').add(  this.newtravel).then(() => {
                 location.href = '/home';
             });
         });

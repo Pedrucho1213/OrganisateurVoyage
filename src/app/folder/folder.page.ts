@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {environment} from '../../environments/environment.prod';
 import * as mapboxgl from 'mapbox-gl';
 import {Geolocation, Geoposition} from '@ionic-native/geolocation/ngx';
-import NewTravel from '../models/new-travel';
+import {NewTravel} from '../models/new-travel';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
