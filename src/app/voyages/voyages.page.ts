@@ -45,7 +45,6 @@ export class VoyagesPage implements OnInit {
         this.travelsCollection.doc(id).valueChanges().subscribe(datos => {
             console.log('this is the result', datos);
         });
-        //console.log(id);
     }
 
 }

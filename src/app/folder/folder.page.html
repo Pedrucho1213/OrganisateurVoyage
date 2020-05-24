@@ -23,7 +23,7 @@
 <ion-content class="container-app">
     <div *ngIf="selectTabs == 'depenses'">
 
-        <ion-card *ngIf="travelsEmpty == false">
+        <ion-card *ngIf="travelsEmpty == true">
             <img src="https://blog.global-exchange.com/wp-content/uploads/2016/02/Mochilero-640.jpg"/>
             <ion-card-header>
                 <ion-card-subtitle>
@@ -40,44 +40,27 @@
             </ion-button>
         </ion-card>
 
-        <div *ngIf="travelsEmpty == true">
-            <ion-list>
+        <div *ngIf="travelsEmpty == false">
+            <ion-list *ngFor="let argent of budget">
                 <ion-list-header>
-                    Aujourd'hui
+                    {{argent.date | date}}
                 </ion-list-header>
                 <ion-item>
                     <ion-avatar slot="start">
                         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
                     </ion-avatar>
                     <ion-label>
-                        <h4>Concepto</h4>
-                        <h5>Hébergement</h5>
+                        <h4>{{argent.description}}</h4>
+                        <h5>{{argent.concept}}</h5>
                     </ion-label>
                     <ion-label slot="end">
-                        <h5>555$</h5>
+                        <h5>{{argent.capital}}</h5>
                     </ion-label>
-                </ion-item>
-                <br>
-                <ion-list-header>
-                    25/05/2020
-                </ion-list-header>
-                <ion-item>
-                    <ion-avatar slot="start">
-                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-                    </ion-avatar>
-                    <ion-label>
-                        <h4>Concepto</h4>
-                        <h5>Hébergement</h5>
-                    </ion-label>
-                    <ion-label slot="end">
-                        <h5>555$</h5>
-                    </ion-label>
-
                 </ion-item>
             </ion-list>
 
             <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-                <ion-fab-button color="dark" routerLink="/depenses-revenu">
+                <ion-fab-button color="dark" (click)="sendId()">
                     <ion-icon name="add"></ion-icon>
                 </ion-fab-button>
 

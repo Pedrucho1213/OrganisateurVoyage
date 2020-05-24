@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="home"></ion-back-button>
+            <ion-back-button defaultHref="" (click)="goBack()"></ion-back-button>
         </ion-buttons>
         <ion-title>Budget</ion-title>
     </ion-toolbar>
@@ -12,19 +12,19 @@
       <ion-card>
           <ion-item>
               <ion-icon name="cash" slot="start"></ion-icon>
-              <ion-input placeholder="Cantité" type="number"></ion-input>
+              <ion-input placeholder="Cantité" type="number" [(ngModel)]="capital"></ion-input>
           </ion-item>
        <ion-item>
          <ion-icon name="text" slot="start"></ion-icon>
-         <ion-input placeholder="Remarque ou bréve description ..."></ion-input>
+         <ion-input placeholder="Remarque ou bréve description ..."[(ngModel)]="descripccion"></ion-input>
        </ion-item>
         <ion-item>
           <ion-label>Date</ion-label>
-          <ion-datetime value="now" placeholder="Aujourd'hui"></ion-datetime>
+          <ion-datetime value="now" placeholder="Aujourd'hui" [(ngModel)]="date"></ion-datetime>
         </ion-item>
           <ion-item>
               <ion-label>Sélectionnez le type de capital</ion-label>
-              <ion-select placeholder="Préciser" [(ngModel)]="capital">
+              <ion-select placeholder="Préciser" [(ngModel)]="type">
                   <ion-select-option value=1>Dépense</ion-select-option>
                   <ion-select-option value=2>Révenu</ion-select-option>
               </ion-select>
@@ -63,7 +63,7 @@
     </div>
 
 
-    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed" (click)="saveDepense()">
         <ion-fab-button color="dark">
             <ion-icon name="save"></ion-icon>
         </ion-fab-button>
