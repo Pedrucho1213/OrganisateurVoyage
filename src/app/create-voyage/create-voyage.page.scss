@@ -1,0 +1,20 @@
+ion-back-button {
+  color: var(--ion-color-primary);
+}
+.padding {
+  padding: 5%;
+}
+ion-card {
+  position: relative;
+  text-align: center;
+}
+ion-card img {
+  opacity: 0.5;
+  filter: blur(1px);
+}
+
+.boton-select {
+  position: relative;
+  left: 5%;
+  width: 90%;
+}

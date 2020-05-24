@@ -1,0 +1,92 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>OPV</ion-title>
+    </ion-toolbar>
+    <ion-segment [(ngModel)]="selectTabs" value="depenses">
+
+        <ion-segment-button value="depenses">
+            <ion-label>Dépenses</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="maps" (click)="getCoordinates()">
+            <ion-label>Carte</ion-label>
+        </ion-segment-button>
+
+    </ion-segment>
+</ion-header>
+
+
+<!-- Segment with default selection -->
+<ion-content class="container-app">
+    <div *ngIf="selectTabs == 'depenses'">
+
+        <ion-card *ngIf="travelsEmpty == false">
+            <img src="https://blog.global-exchange.com/wp-content/uploads/2016/02/Mochilero-640.jpg"/>
+            <ion-card-header>
+                <ion-card-subtitle>
+                    <Cap>Bienvenue</Cap>
+                </ion-card-subtitle>
+                <ion-card-title>Commencer</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Pour commencer à ajouter des dépenses, créez d'abord un voyage. Vos dépenses apparaîtront ici.
+            </ion-card-content>
+            <br>
+            <ion-button expand="full" color="primary" routerLink="/create-voyage">
+                Créez un voyage
+            </ion-button>
+        </ion-card>
+
+        <div *ngIf="travelsEmpty == true">
+            <ion-list>
+                <ion-list-header>
+                    Aujourd'hui
+                </ion-list-header>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-label>
+                        <h4>Concepto</h4>
+                        <h5>Hébergement</h5>
+                    </ion-label>
+                    <ion-label slot="end">
+                        <h5>555$</h5>
+                    </ion-label>
+                </ion-item>
+                <br>
+                <ion-list-header>
+                    25/05/2020
+                </ion-list-header>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                    </ion-avatar>
+                    <ion-label>
+                        <h4>Concepto</h4>
+                        <h5>Hébergement</h5>
+                    </ion-label>
+                    <ion-label slot="end">
+                        <h5>555$</h5>
+                    </ion-label>
+
+                </ion-item>
+            </ion-list>
+
+            <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab-button color="dark" routerLink="/depenses-revenu">
+                    <ion-icon name="add"></ion-icon>
+                </ion-fab-button>
+
+            </ion-fab>
+        </div>
+    </div>
+
+    <div *ngIf="selectTabs == 'maps'" class="containerMaps">
+        <div id="mapbox"></div>
+    </div>
+</ion-content>
+

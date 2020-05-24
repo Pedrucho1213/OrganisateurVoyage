@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>New voyage</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="padding" lines="full">
+
+      <ion-card >
+        <img src="https://elcomercio.pe/resizer/pd1rxD9UI10fHP64tSiIEqCyJNo=/980x528/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KICSYO4P25GVTM6SUSDRJP5IZE.jpg"/>
+        <ion-button expand="block" fill="outline" color="medium" shape="round" class="boton-select">Choisir une photo</ion-button>
+      </ion-card>
+
+        <ion-item>
+            <ion-label position="floating">Nom du voyage</ion-label>
+            <ion-input [(ngModel)]="nom"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Budget de voyage</ion-label>
+            <ion-input [(ngModel)]="budget"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Date de début</ion-label>
+            <ion-datetime value="now" placeholder="Aujourd'hui" [(ngModel)]="debut"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Date de fin</ion-label>
+            <ion-datetime value="then" placeholder="Préciser la date" [(ngModel)]="fin"></ion-datetime>
+        </ion-item>
+        <br>
+        <ion-button expand="block" color="primary" (click)="saveTravel()">Enregistrer</ion-button>
+
+    </div>
+</ion-content>

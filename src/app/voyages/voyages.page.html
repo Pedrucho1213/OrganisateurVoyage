@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Vos voyages</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+    <ion-card *ngFor="let travel of datas" (click)="getDetails(travel.id)">
+        <img src="https://elcomercio.pe/resizer/pd1rxD9UI10fHP64tSiIEqCyJNo=/980x528/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KICSYO4P25GVTM6SUSDRJP5IZE.jpg"/>
+        <ion-card-header>
+                <ion-card-title>{{travel.nameTravel}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-icon name="calendar" slot="start"></ion-icon>
+                <ion-label>{{ travel.startTravel | date }} - {{ travel.endTravel | date }}</ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <br>
+</ion-content>

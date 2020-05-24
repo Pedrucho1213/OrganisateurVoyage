@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Budget</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+      <ion-card>
+          <ion-item>
+              <ion-icon name="cash" slot="start"></ion-icon>
+              <ion-input placeholder="Cantité" type="number"></ion-input>
+          </ion-item>
+       <ion-item>
+         <ion-icon name="text" slot="start"></ion-icon>
+         <ion-input placeholder="Remarque ou bréve description ..."></ion-input>
+       </ion-item>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime value="now" placeholder="Aujourd'hui"></ion-datetime>
+        </ion-item>
+          <ion-item>
+              <ion-label>Sélectionnez le type de capital</ion-label>
+              <ion-select placeholder="Préciser" [(ngModel)]="capital">
+                  <ion-select-option value=1>Dépense</ion-select-option>
+                  <ion-select-option value=2>Révenu</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>Moyen de payment</ion-label>
+              <ion-select placeholder="Préciser" [(ngModel)]="moyen">
+                  <ion-select-option value=1>En espece</ion-select-option>
+                  <ion-select-option value=2>Par carte</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>Concept de dépense</ion-label>
+              <ion-select value="notifications" interface="popover" placeholder="Choisir un" [(ngModel)]="concept">
+                  <ion-select-option value="restaurant">Restaurants</ion-select-option>
+                  <ion-select-option value="transport">Transport</ion-select-option>
+                  <ion-select-option value="hebergement">Hébergement</ion-select-option>
+                  <ion-select-option value="courses">Les courses</ion-select-option>
+                  <ion-select-option value="cafe">Café</ion-select-option>
+                  <ion-select-option value="boissons">Boissons</ion-select-option>
+                  <ion-select-option value="vols">Vols</ion-select-option>
+                  <ion-select-option value="tourisme">Tourisme</ion-select-option>
+                  <ion-select-option value="achats">Achats</ion-select-option>
+                  <ion-select-option value="activites">Activites</ion-select-option>
+                  <ion-select-option value="divertissement">Divertissement</ion-select-option>
+                  <ion-select-option value="frais d'echange">Frais d'échange</ion-select-option>
+                  <ion-select-option value="frais & charges">Frais & charges</ion-select-option>
+                  <ion-select-option value="blanchisserie">Blanchisserie</ion-select-option>
+                  <ion-select-option value="general">General</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item class="botton-image">
+            <ion-button fill="outline">Ajouter une image</ion-button>
+          </ion-item>
+      </ion-card>
+    </div>
+
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button color="dark">
+            <ion-icon name="save"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
