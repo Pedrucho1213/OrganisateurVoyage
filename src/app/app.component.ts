@@ -21,19 +21,14 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Vos voyages',
-      url: '/voyages',
-      icon: 'airplane'
-    },
-    {
-      title: 'Paramètres',
-      url: '/profile',
-      icon: 'cog'
-    },
-     {
       title: 'Recommandations',
       url: '/recommandations',
       icon: 'compass'
+    },
+    {
+      title: 'Vos voyages',
+      url: '/voyages',
+      icon: 'airplane'
     }
   ];
 
