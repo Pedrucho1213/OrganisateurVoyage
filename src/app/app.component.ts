@@ -13,6 +13,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+  correo: any;
   public selectedIndex = 0;
   public appPages = [
     {
@@ -38,6 +39,9 @@ export class AppComponent implements OnInit {
       private statusBar: StatusBar,
       public afAuth: AngularFireAuth
   ) {
+    this.afAuth.authState.subscribe(auth => {
+      this.correo = auth.email;
+    });
     this.initializeApp();
   }
 
