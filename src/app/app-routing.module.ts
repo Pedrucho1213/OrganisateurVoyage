@@ -42,7 +42,11 @@ const routes: Routes = [
   {
     path: 'recommandations',
     loadChildren: () => import('./recommandations/recommandations.module').then( m => m.RecommandationsPageModule)
+  },  {
+    path: 'register-user',
+    loadChildren: () => import('./register-user/register-user.module').then( m => m.RegisterUserPageModule)
   },
+
  
 ];
 

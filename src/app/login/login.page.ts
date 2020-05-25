@@ -12,6 +12,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
 })
 export class LoginPage implements OnInit {
   providerFb: firebase.auth.FacebookAuthProvider;
+
   dataUser = {
     email: '',
     password: ''

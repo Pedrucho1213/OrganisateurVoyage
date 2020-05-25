@@ -1,12 +1,5 @@
-.padding  {
-  padding:  5%,;
-}
-.connectez {
-  text-align: center;
-}
-.flex{
-  display: flex;
-  justify-content: space-between;
+.padding {
+  padding: 5%;
 }
 .logo {
   height: 250px;
@@ -19,4 +12,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.logo ion-label {
+  position: absolute;
+  font-size: 2em;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

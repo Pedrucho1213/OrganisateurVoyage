@@ -1,0 +1,27 @@
+<ion-content>
+
+    <div class="padding">
+
+        <div class="logo">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>S'inscrire</ion-label>
+        </div>
+        <br>
+        <ion-item>
+            <ion-label position="floating"  >Email</ion-label>
+            <ion-input [(ngModel)]="dataUser.email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating" >Mot de passe</ion-label>
+            <ion-input [(ngModel)]="dataUser.password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating"  >Confirmez mot de passe</ion-label>
+            <ion-input  [(ngModel)]="dataUser.password2" type="password"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button expand="full" color="primary" (click)="createUser()">Enregistrer</ion-button>
+        <br>
+        <ion-button expand="full" color="danger" routerLink="/">Annuler</ion-button>
+    </div>
+</ion-content>
